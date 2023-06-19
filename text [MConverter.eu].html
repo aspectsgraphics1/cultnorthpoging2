@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.3.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre class="western">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    /* Stijl voor de videocontainer */
+    #video-container {
+      display: none;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- GIF --&gt;
+  &lt;img id=&quot;gif&quot; src=&quot;path/to/your/gif.gif&quot; alt=&quot;GIF&quot;&gt;
+
+  &lt;!-- Video --&gt;
+  &lt;div id=&quot;video-container&quot;&gt;
+    &lt;video id=&quot;video&quot; width=&quot;640&quot; height=&quot;360&quot; controls&gt;
+      &lt;source src=&quot;path/to/your/video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    // Wacht tot het document volledig is geladen
+    document.addEventListener('DOMContentLoaded', function() {
+      var gif = document.getElementById('gif');
+      var videoContainer = document.getElementById('video-container');
+      var video = document.getElementById('video');
+
+      // Klikgebeurtenis op de GIF
+      gif.addEventListener('click', function() {
+        // Verberg de GIF en toon de video
+        gif.style.display = 'none';
+        videoContainer.style.display = 'block';
+
+        // Speel de video af
+        video.play();
+      });
+
+      // Gebeurtenis wanneer de video is beëindigd
+      video.addEventListener('ended', function() {
+        // Toon de GIF en verberg de video
+        gif.style.display = 'block';
+        videoContainer.style.display = 'none';
+
+        // Start de GIF opnieuw
+        gif.src = gif.src;
+      });
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
